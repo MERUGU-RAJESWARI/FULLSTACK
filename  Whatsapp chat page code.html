@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Chat Box</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    .container{
+    max-width: 500 !important;
+    margin:5% auto;
+    margin-top: 4%;
+    font-family: sans-serif;
+    letter-spacing: 0.5px;
+    background-color: hsl(35, 46%, 95%);
+}
+img{
+    max-width: 40px;
+    border-radius: 50%;
+    margin-bottom: 2px;  
+}
+.message-header{
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 10%;
+    border-bottom: none;
+    display: inline-block;
+    background-color: #3CB371;
+}
+.message-header-img{
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 12px;
+    float: left;
+    margin-top: 40px;
+}
+.active_state{
+    width: 200px;
+    float: left;
+    margin-top: 10px;
+    margin-top: 10px;
+}
+.active_state h4{
+    font-size: 20px;
+    margin-left: 10px;
+    color: #fff;
+}
+.active_state h6{
+    font-size: 10px;
+    margin-left: 10px;
+    line-height: 2px;
+    color: #fff;
+}
+.header-icons{
+    width: 200px;
+    height: 50px;
+    float: right;
+    margin-top: 40px;
+    margin-right: 10px;
+}
+.header-icons .fa{
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+}
+.message-page{
+    padding: 0 0 50px 0;
+    width: 100%;
+    margin-top: 7px;
+}
+.messages{
+    padding: 30px 15px 0 25px;
+}
+.msg-page{
+    height: 516px;
+    overflow-y: auto;
+}
+.recived-chat-img{
+    display: inline;
+    width: 40px;
+     float: left; 
+     bottom: 80px;
+     margin-top: 40px;
+}
+.recived-msg{
+    display: inline-block;
+    padding: 0 0 0 40px;
+    vertical-align: top;
+    width: 40%;
+}
+.recived-msg-inbox{
+    width:57%;
+}
+.recived-msg-inbox p{
+    background: #FFEFD5 none repeat scroll 0 0;
+    border-radius: 10px;
+    color: #646464;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+}
+.time{
+    color: #777777dc;
+    display: block;
+    font-size: 12px;
+    margin: 8px 0 0;
+}
+.outgoing-chat{
+    overflow: hidden;
+    margin: 26px 20px;
+}
+.outgoing-chat-msg p{
+    background: #32CD32 none repeat scroll 0 0;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 40%;
+}
+.outgoing-chat-msg{
+    float: left;
+    width: 50%;
+    margin-left: 70%;
+}
+.outgoing-chat-img{
+    display: inline-block;
+    width: 40px;
+    float: right;
+}
+.msg-bottom{
+    position: relative;
+    height: 90px;
+    background-color: #3cb371;
+}
+.input-group{
+    float: left;
+    margin-top: 25px;
+    margin-right: 35px;
+    outline: none !important;
+    border-radius: 20px;
+    width: 60% !important;
+    background: #faf9f7;
+    margin-left: 10px;
+}
+.form-control{
+    border: none !important;
+    border-radius: 20px !important;
+    margin-left: 100px;
+}
+.input-group-text{
+    background: transparent !important;
+    border: none !important;
+}
+.input-group .fa{
+    color: #0df046e1;
+    float: right;
+}
+.bottom-icons{
+    float: left;
+    margin-top: 28px;
+    width: 30% !important;
+    margin-left: 60px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.bottom-icons .fa{
+    color: #fff;
+    padding: 5px;
+}
+.form-control:focus{
+    border-color: none !important;
+    box-shadow: none !important;
+    border-radius: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message-header">
+            <div class="message-header-img">
+                <i class="fa-solid fa-arrow-left" style="color: #eceff3;"></i><i> </i>
+                    <img src="C:\Users\RAJESWARI\Pictures\flow (2).jpeg" alt="image"bottom-icons="80%">
+           </div>
+              <div class="active_state">
+                   <h4>Thamudu <i class="fa-solid fa-heart" style="color: hsl(0, 78%, 54%);"></i> </h4>
+                   <h6>1 hours ago...</h6>
+            </div>
+                 <div class="header-icons">
+                 <i class="fa fa-phone"></i>
+                 <i class="fa fa-video-camera"></i>
+                 <i class="fa-solid fa-ellipsis-vertical" style="color: #ecf2e8;"></i>
+                 </div>
+           </div>
+                <div class="message-page">
+                <div class="message-index">
+                <div class="messages">
+                    <div class="msg-page">
+                        <div class="recived-chat">
+                            <div class="recived-chat-img">
+                                <img src="C:\Users\RAJESWARI\Pictures\flow (2).jpeg" alt="flower">
+                            </div>
+                            <div class="recived-msg">
+                                <div class="recived-msg-inbox">
+                                    <p>Hi Akka..,Good Morning</p>
+                                    <span class="time">12:0 AM |AUGUST 31</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outgoing-chat">
+                            <div class="outgoing-chat-msg">
+                                    <p>Hi, Happy Rakshbandhan raa</p>
+                                    <span class="time">12:01 PM |AUGUST 31 </span>
+                             </div>
+                                <div class="outgoing-chat-img">
+                                     <img src="C:\Users\RAJESWARI\Pictures\flo (2).jpeg" alt="toy">
+                               </div>
+                      </div>
+                            <div class="recived-chat">
+                               <div class="recived-chat-img">
+                                   <img src="C:\Users\RAJESWARI\Pictures\flow (2).jpeg" alt="flower">
+                              </div>
+                                  <div class="recived-msg">
+                                  <div class="recived-msg-inbox">
+                                       <p>Thank u, Miss u Akka ?</p>
+                                       <span class="time">12:02 AM | AUGUST 31</span>
+                                 </div>
+                            </div>
+                          </div>
+                             <div class="outgoing-chat">
+                                 <div class="outgoing-chat-msg">
+                                      <p>Miss u toooo....,<span></span>&#x1f614;<span> &#x1f614;</span> <span> &#x1f614;</span></p>
+                                         <span class="time">12:04 AM |AUGUST 31</span>
+                                </div>
+                                   <div class="outgoing-chat-img">
+                                       <img src="C:\Users\RAJESWARI\Pictures\flo (2).jpeg" alt="toy">
+                                   </div>
+                                </div>    
+                                   <div class="recived-chat">
+                                       <div class="recived-chat-img">
+                                            <img src="C:\Users\RAJESWARI\Pictures\flow (2).jpeg" alt="">
+                                       </div>
+                                        <div class="recived-msg">
+                                           <div class="recived-msg-inbox">
+                                                <p>Ithiki ravachu ga akka<span> &#x1f614;</span> <span> &#x1f614;</span></p>
+                                                     <span class="time">12:05 AM| AUGUST 31</span>
+                                              </div>
+                                        </div>
+                                 </div>
+                                     <div class="outgoing-chat">
+                                         <div class="outgoing-chat-msg">
+                                              <p>Holidays ki vastha<br>Exam ki Baga Chaduvu<span></span> </p>
+                                                   <span class="time">12:07 AM|AUGUST 31 </span>
+                                         </div>
+                                            <div class="outgoing-chat-img">
+                                                  <img src="C:\Users\RAJESWARI\Pictures\flo (2).jpeg" alt="toy">
+                                            </div>
+                                   </div>
+                                     <div class="recived-chat">
+                                            <div class="recived-chat-img">
+                                                <img src="C:\Users\RAJESWARI\Pictures\flow (2).jpeg" alt="flower">
+                                            </div>
+                                               <div class="recived-msg">
+                                                      <div class="recived-msg-inbox">
+                                                             <p>kk<span> &#x1f614;</span> chaduvuthuna Akka Last exam kada<span>&#x1F609;</span><span>&#x1F923;</span></p>
+                                                                   <span class="time">12:10 AM | AUGUST 31</span>
+                                                      </div>
+                                               </div>
+                                    </div>
+                                       <div class="outgoing-chat">
+                                            <div class="outgoing-chat-msg">
+                                                <p>Exam taruvata Enjoy cheyavachu ippudu chaduvu<span>&#x1F60A; </span></p>
+                                                     <span class="time">12:13 AM | AUGUST 31 </span>
+                                            </div>
+                                               <div class="outgoing-chat-img">
+                                                    <img src="C:\Users\RAJESWARI\Pictures\flo (2).jpeg" alt="toy">
+                                               </div>
+                                      </div>
+                                            <div class="recived-chat">
+                                                <div class="recived-chat-img">
+                                                    <img src="C:\Users\RAJESWARI\Pictures\flow (2).jpeg" alt="flower">
+                                               </div>   
+                                                    <div class="recived-msg">
+                                                         <div class="recived-msg-inbox">
+                                                              <p>ledu akka mali classes start<span>&#x1F60C; </span></p>
+                                                                      <span class="time">12:15 AM| AUGUST 31</span>
+                                                          </div>
+                                                   </div>
+                                               <div class="outgoing-chat">
+                                                      <div class="outgoing-chat-msg">            
+                                                             <p>oh kk<span>&#x1F601;</span><br>Oops,Time chudu <span>&#x1F44B;</span></p>
+                                                                   <span class="time">12:17 AM | AUGUST 31</span>
+                                                      </div>
+                                                         <div class="outgoing-chat-img">
+                                                              <img src="C:\Users\RAJESWARI\Pictures\flo (2).jpeg" alt="">
+                                                         </div>
+                                             </div>
+                                               <div class="recived-chat">
+                                                     <div class="recived-chat-img">
+                                                          <img src="C:\Users\RAJESWARI\Pictures\flow (2).jpeg" alt="flower">
+                                                     </div>   
+                                                        <div class="recived-msg">
+                                                              <div class="recived-msg-inbox">
+                                                                <p>Goodnight<span>&#x1F634;</span></p>
+                                                                      <span class="time">12:18 | AUGUST 31</span>
+                                                              </div>
+                                                       </div>
+                                                          <div class="outgoing-chat">
+                                                             <div class="outgoing-chat-msg">            
+                                                                <p> Goodnight<span>&#x1F634;</span><span>&#x1F634;</span></p>
+                                                                     <span class="time">12:20 AM | AUGUST 31</span>
+                                                             </div>
+                                                                <div class="outgoing-chat-img">
+                                                                     <img src="C:\Users\RAJESWARI\Pictures\flo (2).jpeg" alt="">
+                                                                </div>
+                                                       </div>
+                                              </div>
+                                  </div>
+                      </div>
+                          <div class="msg-bottom">
+                              <div class="input-group">
+                                    <center><input type="text" class="form-control" placeholder="write message....." ></center>
+                             <div> 
+                        </div>
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                  <i class="fa fa-paper-plane"></i>  
+                                </span>
+                           </div>
+                     </div>
+                        <div class="bottom-icons">
+                              <i class="fa-solid fa-paperclip" style="color: hwb(200 95% 3% / 0.822);"></i>
+                              <i class="fa fa-plus-circle"></i>
+                              <i class="fa fa-camera"></i>
+                              <i class="fa fa-microphone"></i>
+                              <i class="fa fa-smile-o"></i>
+                 
+                      </div>
+                 </div>
+            </div>
+        </div>
+   </body>
+</html>
+
